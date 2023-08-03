@@ -38,16 +38,16 @@ export function Home() {
     defaultValues: { task: '', minutesAmount: 5 },
   })
 
-  const handleCreateNewCycle = (data: NewCycleFormData) => {
-    createNewCycle()
-    reset()
-  }
-
   const { handleSubmit, watch, reset } = newCycleForm
 
   const task = watch('task')
   // var auxiliar | se task = vazio, isSubmitDisabled sera true
   const isSubmitDisabled = !task
+
+  const handleCreateNewCycle = (data: NewCycleFormData) => {
+    createNewCycle(data)
+    reset()
+  }
 
   return (
     <HomeContainer>
