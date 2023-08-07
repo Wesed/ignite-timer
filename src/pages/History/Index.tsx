@@ -37,9 +37,12 @@ export function History() {
                     {cycle.finishedDate && (
                       <Status statusColor="green">Concluído</Status>
                     )}
-                    {cycle.interruptedDate ? (
+
+                    {cycle.interruptedDate && (
                       <Status statusColor="red">Interrompido</Status>
-                    ) : (
+                    )}
+
+                    {!cycle.finishedDate && !cycle.interruptedDate && (
                       <Status statusColor="yellow">Em andamento</Status>
                     )}
                   </td>
