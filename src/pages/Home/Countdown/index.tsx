@@ -26,7 +26,7 @@ export function Countdown() {
           e retorna qt tempo passou */
         const secondsDifference = differenceInSeconds(
           new Date(),
-          activeCycle.startDate,
+          new Date(activeCycle.startDate), // se for uma string, converte pra date
         )
         // qd for igual, significa q acabou o timer
         if (secondsDifference >= totalSeconds) {
